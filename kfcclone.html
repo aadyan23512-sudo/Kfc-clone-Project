@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="kfcstyle.css">
+</head>
+<body>
+
+<!-- nav-->
+<div class="navbar">
+  <button class="hamburger">☰</button>
+  <div class="kfc-logo"><img src="logo.png" alt="KFC Logo"></div>
+  <div class="nav-order-btns">
+    <button class="nav-pill active" onclick="switchMode(this)">
+      <span class="pill-icon">🛵</span> DELIVERY
+    </button>
+    <button class="nav-pill" onclick="switchMode(this)">
+      <span class="pill-icon">🏪</span> PICKUP
+    </button>
+    <button class="nav-pill" onclick="switchMode(this)">
+      <span class="pill-icon">👕</span> MERCH
+    </button>
+  </div>
+  <div class="nav-right">
+    <div class="cart-icon">
+      🛒
+      <div class="cart-badge" id="cartBadge">0</div>
+    </div>
+    <button class="login-btn">LOGIN</button>
+  </div>
+</div>
+
+<!-- tabs -->
+<div class="cat-tabs">
+  <button class="cat-tab active" onclick="activateTab(this, 'mex')">Let's Mex It Up</button>
+  <button class="cat-tab" onclick="activateTab(this, 'everyday')">Everyday Value</button>
+  <button class="cat-tab" onclick="activateTab(this, 'alacarte')">Ala-Carte-&-Combos</button>
+  <button class="cat-tab" onclick="activateTab(this, 'signature')">Signature-Boxes</button>
+  <button class="cat-tab" onclick="activateTab(this, 'sharing')">Sharing</button>
+  <button class="cat-tab" onclick="activateTab(this, 'snacks')">Snacks-&-Beverages</button>
+  <button class="cat-tab" onclick="activateTab(this, 'condiments')">Condiments</button>
+  <button class="cat-tab" onclick="activateTab(this, 'midnight')">Midnight (Start at 12 am)</button>
+</div>
+
+<!-- main -->
+<div class="main">
+  <!-- column -->
+  <div class="menu-col">
+
+    <!-- mex col. -->
+    <div id="sec-mex">
+      <div class="section-heading">LET'S MEX IT UP</div>
+      <div class="heading-bar"></div>
+      <div class="cards-row">
+        <div class="menu-card">
+          <div class="card-img-area">
+            <img src="/img mex/Mex.png" style="height: 211px;" alt="🍔">
+            <button class="heart-btn">♡</button>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Mexinger Burger</div>
+            <div class="card-desc">Bring the taste of Mexico with every bite. Layered with spicy an...</div>
+            <div class="card-price">Rs 660</div>
+            <button class="add-bucket-btn" onclick="addItem('Mexinger Burger', 660)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-area">
+            <img src="/img mex/mexango.png" alt="🍗" height="211px">
+            <button class="heart-btn">♡</button>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Mexango Wings</div>
+            <div class="card-desc">8 pcs of crispy wings coated with Hot Mango Mexican sauce serve...</div>
+            <div class="card-price">Rs 690</div>
+            <button class="add-bucket-btn" onclick="addItem('Mexango Wings', 690)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-area">
+            <img src="/img mex/combo.png" alt="🥤" height="211px">
+            <button class="heart-btn">♡</button>
+          </div>
+          <div class="card-body">
+            <div class="card-name">Mexinger Combo</div>
+            <div class="card-desc">1 Mexinger Burger + 1 Regular Fries + 1 Regular Drink</div>
+            <div class="card-price">Rs 950</div>
+            <button class="add-bucket-btn" onclick="addItem('Mexinger Combo', 950)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Everyday Value -->
+    <div id="sec-everyday">
+      <div class="section-heading">EVERYDAY VALUE</div>
+      <div class="heading-bar"></div>
+      <div class="cards-row">
+        <div class="menu-card">
+          <div class="card-img-area"><img src="/img everyday/krunch.png" alt="Krunch Burger" style="height: 211px;"><button class="heart-btn">♡</button></div>
+          <div class="card-body">
+            <div class="card-name">Krunch Burger</div>
+            <div class="card-desc">Classic crispy chicken fillet with lettuce and mayo</div>
+            <div class="card-price">Rs 310</div>
+            <button class="add-bucket-btn" onclick="addItem('Krunch Burger', 310)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-area"><img src="/img everyday/zingeratha.png" alt="Zingeratha" style="height: 211px;"><button class="heart-btn">♡</button></div>
+          <div class="card-body">
+            <div class="card-name">Zingeratha</div>
+            <div class="card-desc">Tender boneless strips, sliced onions, tangy imli chutney, mint...</div>
+            <div class="card-price">Rs 390</div>
+            <button class="add-bucket-btn" onclick="addItem('Zingeratha', 390)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-area"><img src="/img everyday/rice&spice.png" alt="Value Meal" style="height: 211px;"><button class="heart-btn">♡</button></div>
+          <div class="card-body">
+            <div class="card-name"> Rice & Spice</div>
+            <div class="card-desc">Spiced and buttery rice with 6 pcs of Hot Shots topped with our...</div>
+            <div class="card-price">Rs 390</div>
+            <button class="add-bucket-btn" onclick="addItem('Rice & Spice', 390)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+      </div>
+      <div class="cards-row">
+        <div class="menu-card">
+          <div class="card-img-area"><img src="/img everyday/chicken.png" alt="3 pcs Chicken" style="height: 211px;"><button class="heart-btn">♡</button></div>
+          <div class="card-body">
+            <div class="card-name">3 pcs Chicken</div>
+            <div class="card-desc">3 pieces of Hot and Crispy Fried Chicken</div>
+            <div class="card-price">Rs 720</div>
+            <button class="add-bucket-btn" onclick="addItem('3 pcs Chicken', 720)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-area"><img src="/img everyday/twistcombo.png" alt="Twister Combo" style="height: 211px;"><button class="heart-btn">♡</button></div>
+          <div class="card-body">
+            <div class="card-name">Twister Combo</div>
+            <div class="card-desc">Twister + 1 Regular fries + 1 Regular drinkt...</div>
+            <div class="card-price">Rs 440</div>
+            <button class="add-bucket-btn" onclick="addItem('Twister Combo', 440)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ala Carte -->
+    <div id="sec-alacarte">
+      <div class="section-heading">ALA-CARTE & COMBOS</div>
+      <div class="heading-bar"></div>
+      <div class="cards-row">
+        <div class="menu-card">
+          <div class="card-img-area"><img src="/img ala carte/zinger.png" alt="Zinger Burger" style="height: 211px;"><button class="heart-btn">♡</button></div>
+          <div class="card-body">
+            <div class="card-name">Zinger Burger</div>
+            <div class="card-desc">Our hero- crispy Zinger fillet, signature mayo and lettuce...</div>
+            <div class="card-price">Rs 600</div>
+            <button class="add-bucket-btn" onclick="addItem('Zinger Burger', 600)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-area"><img src="/img ala carte/stacker.png" alt="Hot & Crispy" style="height: 211px;"><button class="heart-btn">♡</button></div>
+          <div class="card-body">
+            <div class="card-name">Zinger Stacker</div>
+            <div class="card-desc">Extra crispy, extra spicy — for the bold ones</div>
+            <div class="card-price">Rs 660</div>
+            <button class="add-bucket-btn" onclick="addItem('Zinger Stacker', 660)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+        <div class="menu-card">
+          <div class="card-img-area"><img src="/img ala carte/kentuckypng.png" alt="Kentucky Fried Chicken" style="height: 211px;"><button class="heart-btn">♡</button></div>
+          <div class="card-body">
+            <div class="card-name">Kentucky Burger</div>
+            <div class="card-desc">OG Zinger fillet layered with beef pepperoni, crispy fried onions,...</div>
+            <div class="card-price">Rs 660</div>
+            <button class="add-bucket-btn" onclick="addItem('Kentucky Burger', 660)">+ ADD TO BUCKET</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <div class="sidebar-box">
+      <div class="sidebar-header">
+        <div class="sidebar-title">Order Details</div>
+        <div class="sidebar-dots">
+          <div class="sidebar-dot"></div>
+          <div class="sidebar-dot"></div>
+          <div class="sidebar-dot"></div>
+        </div>
+      </div>
+      <div class="sidebar-img-area"><img src="/cart/buck.png"></div>
+      <div class="sidebar-empty" id="sidebarEmpty">You haven't added any items in bucket yet</div>
+      <div id="sidebarItems" style="padding: 0 16px; max-height: 220px; overflow-y: auto;"></div>
+      <div class="bucket-bar">
+        <span class="bucket-bar-left" id="bucketCount">0 Item</span>
+        <span class="bucket-bar-sep">|</span>
+        <span class="bucket-bar-price" id="bucketPrice">Rs 0</span>
+        <button class="bucket-bar-right" onclick="viewBucket()">View Bucket <span>›</span></button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+let items = [];
+let total = 0;
+
+function switchMode(el) {
+  document.querySelectorAll('.nav-pill').forEach(b => b.classList.remove('active'));
+  el.classList.add('active');
+}
+
+function activateTab(el, sec) {
+  document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  const target = document.getElementById('sec-' + sec);
+  if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function addItem(name, price) {
+  items.push({ name, price });
+  total += price;
+
+  const cart = document.querySelector('.cart-icon');
+  if (cart) {
+    cart.classList.remove('pop');
+    void cart.offsetWidth;
+    cart.classList.add('pop');
+    cart.animate([
+      { transform: 'scale(1)' },
+      { transform: 'scale(1.12)' },
+      { transform: 'scale(1)' }
+    ], { duration: 300, easing: 'ease-out' });
+  }
+
+  const cards = document.querySelectorAll('.menu-card');
+  cards.forEach(card => card.classList.remove('pulse'));
+  const lastPressed = event && event.target ? event.target.closest('.menu-card') : null;
+  if (lastPressed) {
+    lastPressed.classList.remove('pulse');
+    void lastPressed.offsetWidth;
+    lastPressed.classList.add('pulse');
+  }
+
+  document.getElementById('cartBadge').textContent = items.length;
+  document.getElementById('bucketCount').textContent = items.length + ' Item' + (items.length !== 1 ? 's' : '');
+  document.getElementById('bucketPrice').textContent = 'Rs ' + total.toLocaleString();
+
+  const empty = document.getElementById('sidebarEmpty');
+  const list = document.getElementById('sidebarItems');
+  empty.style.display = 'none';
+  list.innerHTML = items.map(i =>
+    `<div style="display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid #f0f0f0;font-size:13px;">
+      <span style="font-weight:600;">${i.name}</span>
+      <span style="color:#e4002b;font-weight:700;">Rs ${i.price.toLocaleString()}</span>
+    </div>`
+  ).join('');
+
+  const t = document.getElementById('toast');
+  t.textContent = name + ' added to bucket!';
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 1800);
+}
+
+function viewBucket() {
+  if (items.length === 0) return;
+  const summary = items.map(i => i.name + ' (Rs ' + i.price + ')').join(', ');
+  sendPrompt('My KFC bucket has: ' + summary + '. Total Rs ' + total + '. Help me complete or review my order.');
+}
+
+const style = document.createElement('style');
+style.textContent = `
+  .cart-icon.pop {
+    animation: floatUp 0.35s ease;
+  }
+`;
+document.head.appendChild(style);
+</script>
+</body>
+</html>
